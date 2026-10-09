@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "project_id": 2,
+        "title": "build landing page",
+        "description": "20 degrees wide, blue and responsive",
+        "priority": "medium",
+        "status": "completed",
+        "due_date": "2026-10-09"
+    },
+    {
+        "id": 2,
+        "project_id": 3,
+        "title": "build homepage",
+        "description": "a coloured one",
+        "priority": "medium",
+        "status": "pending",
+        "due_date": "2026-10-04"
+    },
+    {
+        "id": 3,
+        "project_id": 4,
+        "title": "build homepage",
+        "description": "fkit8",
+        "priority": "medium",
+        "status": "pending",
+        "due_date": "2026-10-04"
+    }
+]

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        DevFlow Dashboard
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="app-layout">
+
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <h1>
+                    DevFlow
+                </h1>
+
+                <p>
+                    Project Management
+                </p>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="index.html"
+                    class="nav-link active"
+                >
+                    Dashboard
+                </a>
+
+
+                <a
+                    href="projects.html"
+                    class="nav-link"
+                >
+                    Projects
+                </a>
+
+
+                <a
+                    href="tasks.html"
+                    class="nav-link"
+                >
+                    Tasks
+                </a>
+
+
+                <a
+                    href="clients.html"
+                    class="nav-link"
+                >
+                    Clients
+                </a>
+
+            </nav>
+            <button type="button" id="logout-button" class="logout-button">Logout</button>
+
+        </aside>
+
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+
+            <!-- =========================
+                 PAGE HEADER
+            ========================== -->
+
+            <header class="page-header">
+
+                <div>
+
+                    <h2>
+                        Dashboard
+                    </h2>
+
+                    <p>
+                        Here's what's happening with your work.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =========================
+                 STATISTICS
+            ========================== -->
+
+            <section class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Total Projects
+                    </span>
+
+                    <strong
+                        id="total-projects"
+                        class="stat-value"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Active Projects
+                    </span>
+
+                    <strong
+                        id="active-projects"
+                        class="stat-value"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Total Tasks
+                    </span>
+
+                    <strong
+                        id="total-tasks"
+                        class="stat-value"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Completed Tasks
+                    </span>
+
+                    <strong
+                        id="completed-tasks"
+                        class="stat-value"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =========================
+                 DASHBOARD CONTENT
+            ========================== -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- =========================
+                     RECENT PROJECTS
+                ========================== -->
+
+                <div class="dashboard-section">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h3>
+                                Recent Projects
+                            </h3>
+
+                            <p>
+                                Your latest projects.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="recent-projects"
+                        class="dashboard-list"
+                    >
+
+                        <p class="loading-message">
+                            Loading projects...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     RECENT TASKS
+                ========================== -->
+
+                <div class="dashboard-section">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h3>
+                                Recent Tasks
+                            </h3>
+
+                            <p>
+                                Your latest tasks.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="recent-tasks"
+                        class="dashboard-list"
+                    >
+
+                        <p class="loading-message">
+                            Loading tasks...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
+

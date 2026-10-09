@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Clients - DevFlow</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="app-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <h1>
+                    DevFlow
+                </h1>
+
+                <p>
+                    Project Management
+                </p>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="index.html"
+                    class="nav-link"
+                >
+                    Dashboard
+                </a>
+
+
+                <a
+                    href="projects.html"
+                    class="nav-link"
+                >
+                    Projects
+                </a>
+
+
+                <a
+                    href="tasks.html"
+                    class="nav-link"
+                >
+                    Tasks
+                </a>
+
+
+                <a
+                    href="clients.html"
+                    class="nav-link active"
+                >
+                    Clients
+                </a>
+
+            </nav>
+
+
+            <button
+                type="button"
+                id="logout-button"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 PAGE HEADER
+            ================================================== -->
+
+            <header class="page-header clients-page-header">
+
+                <div>
+
+                    <h2>
+                        Clients
+                    </h2>
+
+                    <p>
+                        Manage your clients and keep their information organized.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="new-client-button"
+                    class="primary-button"
+                >
+                    + New Client
+                </button>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 CLIENTS
+            ================================================== -->
+
+            <section>
+
+                <div
+                    id="clients-container"
+                    class="clients-grid"
+                >
+
+                    <div class="empty-state">
+
+                        <h3>
+                            Loading clients...
+                        </h3>
+
+                        <p>
+                            Your clients will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =================================================
+         CREATE / EDIT CLIENT MODAL
+    ================================================== -->
+
+    <div
+        id="client-modal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>
+                        Create Client
+                    </h2>
+
+                    <p>
+                        Add a client to your workspace.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="close-client-modal"
+                    class="close-button"
+                    aria-label="Close client modal"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+
+            <form
+                id="client-form"
+            >
+
+
+                <div class="form-group">
+
+                    <label
+                        for="client-name"
+                    >
+                        Name
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="client-name"
+                        placeholder="e.g. John Doe"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label
+                        for="client-email"
+                    >
+                        Email
+                    </label>
+
+
+                    <input
+                        type="email"
+                        id="client-email"
+                        placeholder="client@example.com"
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label
+                        for="client-phone"
+                    >
+                        Phone
+                    </label>
+
+
+                    <input
+                        type="tel"
+                        id="client-phone"
+                        placeholder="+234..."
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label
+                        for="client-company"
+                    >
+                        Company
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="client-company"
+                        placeholder="Company name"
+                    >
+
+                </div>
+
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="cancel-client-button"
+                        class="secondary-button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Create Client
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         DELETE CONFIRMATION MODAL
+    ================================================== -->
+
+    <div
+        id="confirm-client-modal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2 id="confirm-client-title">
+                        Delete Client
+                    </h2>
+
+                    <p>
+                        This action cannot be undone.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <p id="confirm-client-message">
+                Are you sure you want to delete this client?
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="cancel-client-delete-button"
+                    class="secondary-button"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    id="confirm-client-delete-button"
+                    class="danger-button"
+                >
+                    Delete
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         ERROR MODAL
+    ================================================== -->
+
+    <div
+        id="error-modal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2 id="error-title">
+                        Something went wrong
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <p id="error-message">
+                An unexpected error occurred.
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="close-error-button"
+                    class="primary-button"
+                >
+                    OK
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script src="auth.js"></script>
+
+    <script src="clients.js"></script>
+
+</body>
+
+</html>
+

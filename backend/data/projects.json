@@ -1,0 +1,26 @@
+[
+    {
+        "id": 2,
+        "name": "A business website",
+        "description": "for multinationals",
+        "status": "active",
+        "client_id": 2,
+        "user_id": 1
+    },
+    {
+        "id": 3,
+        "user_id": 3,
+        "name": "Build a company website for starcrest",
+        "description": "a full stack website",
+        "client_id": 4,
+        "status": "active"
+    },
+    {
+        "id": 4,
+        "user_id": 2,
+        "name": "Build a company website for starcrest",
+        "description": "dsegeger",
+        "client_id": 5,
+        "status": "active"
+    }
+]

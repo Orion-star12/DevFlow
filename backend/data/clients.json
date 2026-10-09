@@ -1,0 +1,26 @@
+[
+    {
+        "id": 2,
+        "name": "cape LTD",
+        "email": "cape@gmail.com",
+        "phone": "09176345618",
+        "company": "growing peak",
+        "user_id": 1
+    },
+    {
+        "id": 4,
+        "user_id": 3,
+        "name": "Starcrest",
+        "email": "starcrest@gmail.com",
+        "phone": "0811564534",
+        "company": "Starcrest LTD"
+    },
+    {
+        "id": 5,
+        "user_id": 2,
+        "name": "boss",
+        "email": "boss@gmail.com",
+        "phone": "0917634561",
+        "company": "growing peak"
+    }
+]

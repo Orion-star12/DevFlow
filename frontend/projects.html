@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Projects - DevFlow</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="app-layout">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <h1>
+                    DevFlow
+                </h1>
+
+                <p>
+                    Project Management
+                </p>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="index.html"
+                    class="nav-link"
+                >
+                    Dashboard
+                </a>
+
+
+                <a
+                    href="projects.html"
+                    class="nav-link active"
+                >
+                    Projects
+                </a>
+
+
+                <a
+                    href="tasks.html"
+                    class="nav-link"
+                >
+                    Tasks
+                </a>
+
+
+                <a
+                    href="clients.html"
+                    class="nav-link"
+                >
+                    Clients
+                </a>
+
+            </nav>
+
+
+            <button
+                type="button"
+                id="logout-button"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+
+            <!-- PAGE HEADER -->
+
+            <header class="page-header project-page-header">
+
+                <div>
+
+                    <h2>
+                        Projects
+                    </h2>
+
+                    <p>
+                        Manage your projects and track their progress.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="new-project-button"
+                    class="primary-button"
+                >
+                    + New Project
+                </button>
+
+            </header>
+
+
+
+            <!-- PROJECT FILTERS -->
+
+            <section class="project-filters">
+
+                <div class="project-search">
+
+                    <label
+                        for="project-search-input"
+                        class="sr-only"
+                    >
+                        Search projects
+                    </label>
+
+                    <input
+                        type="search"
+                        id="project-search-input"
+                        placeholder="Search projects..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <div class="project-status-filter">
+
+                    <label
+                        for="project-status-filter"
+                        class="sr-only"
+                    >
+                        Filter projects by status
+                    </label>
+
+                    <select
+                        id="project-status-filter"
+                    >
+
+                        <option value="all">
+                            All statuses
+                        </option>
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="completed">
+                            Completed
+                        </option>
+
+                        <option value="on-hold">
+                            On Hold
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="clear-project-filters"
+                    class="secondary-button"
+                >
+                    Clear
+                </button>
+
+            </section>
+
+
+
+            <!-- PROJECT RESULTS -->
+
+            <section>
+
+                <div
+                    id="projects-result-summary"
+                    class="project-result-summary"
+                    aria-live="polite"
+                >
+                    Showing all projects
+                </div>
+
+
+                <div
+                    id="projects-container"
+                    class="projects-grid"
+                >
+
+                    <div class="empty-state">
+
+                        <h3>
+                            Loading projects...
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- CREATE PROJECT MODAL -->
+
+    <div
+        id="project-modal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+            <h2>
+                Create Project
+            </h2>
+
+            <p>
+                Add a project to start organizing your work.
+            </p>
+
+
+            <form id="project-form">
+
+                <label for="project-name">
+                    Project Name
+                </label>
+
+                <input
+                    type="text"
+                    id="project-name"
+                    placeholder="e.g. Business Website"
+                    required
+                >
+
+
+                <label for="project-description">
+                    Description
+                </label>
+
+                <textarea
+                    id="project-description"
+                    placeholder="What is this project about?"
+                ></textarea>
+
+
+                <label for="project-client">
+                    Client
+                </label>
+
+                <select id="project-client">
+
+                    <option value="">
+                        No client
+                    </option>
+
+                </select>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="cancel-project-button"
+                        class="secondary-button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Create Project
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ERROR MODAL -->
+
+    <div
+        id="error-modal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+            <h2 id="error-title">
+                Something went wrong
+            </h2>
+
+            <p id="error-message">
+                An unexpected error occurred.
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="close-error-button"
+                    class="primary-button"
+                >
+                    OK
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="auth.js"></script>
+
+    <script src="projects.js?v=2"></script>
+
+</body>
+
+</html>
+

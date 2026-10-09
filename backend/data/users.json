@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Paul",
+        "email": "paul@gmail.com",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$YbgpqEN5jc4U3tyS3SAhvw$1fqIXPTz5q9T8gclUhaXVQVVAyyyKaKNUyiJRuhCW/o"
+    },
+    {
+        "id": 2,
+        "name": "boss",
+        "email": "boss@gmail.com",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$h71PPN4tQhAwlb77ClbOQQ$c8dgycn5K5x9f26rU/4+R+/pFkJOEhGTlCzg3/90HRc"
+    },
+    {
+        "id": 3,
+        "name": "king",
+        "email": "king@gmail.com",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$t9tFyORVEaTRqi9VOjzVrA$U1Bv5FXlkPauUeX5y/iPGDBAxv7S1cCjQAR4ZJ+Hx+Y"
+    }
+]

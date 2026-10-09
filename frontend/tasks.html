@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tasks - DevFlow</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="app-layout">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <h1>
+                    DevFlow
+                </h1>
+
+                <p>
+                    Project Management
+                </p>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="index.html"
+                    class="nav-link"
+                >
+                    Dashboard
+                </a>
+
+
+                <a
+                    href="projects.html"
+                    class="nav-link"
+                >
+                    Projects
+                </a>
+
+
+                <a
+                    href="tasks.html"
+                    class="nav-link active"
+                >
+                    Tasks
+                </a>
+
+
+                <a
+                    href="clients.html"
+                    class="nav-link"
+                >
+                    Clients
+                </a>
+
+            </nav>
+
+
+            <button
+                type="button"
+                id="logout-button"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+
+            <!-- PAGE HEADER -->
+
+            <header class="page-header tasks-page-header">
+
+                <div>
+
+                    <h2>
+                        Tasks
+                    </h2>
+
+                    <p>
+                        View your tasks across all projects.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- TASK SUMMARY -->
+
+            <section class="task-summary-grid">
+
+                <div class="task-summary-card">
+
+                    <span class="task-summary-label">
+                        Total Tasks
+                    </span>
+
+                    <strong
+                        id="total-tasks"
+                        class="task-summary-value"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="task-summary-card">
+
+                    <span class="task-summary-label">
+                        Pending
+                    </span>
+
+                    <strong
+                        id="pending-tasks"
+                        class="task-summary-value"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="task-summary-card">
+
+                    <span class="task-summary-label">
+                        In Progress
+                    </span>
+
+                    <strong
+                        id="in-progress-tasks"
+                        class="task-summary-value"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="task-summary-card">
+
+                    <span class="task-summary-label">
+                        Completed
+                    </span>
+
+                    <strong
+                        id="completed-tasks"
+                        class="task-summary-value"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- TASK LIST -->
+
+            <section>
+
+                <div class="section-header tasks-section-header">
+
+                    <div>
+
+                        <h3>
+                            All Tasks
+                        </h3>
+
+                        <p>
+                            Tasks from all your projects.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="tasks-container"
+                    class="tasks-page-list"
+                >
+
+                    <div class="empty-state">
+
+                        <h3>
+                            Loading tasks...
+                        </h3>
+
+                        <p>
+                            Your tasks will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <script src="auth.js"></script>
+
+    <script src="tasks-page.js?v=2"></script>
+
+</body>
+
+</html>
+

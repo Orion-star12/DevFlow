@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Project Details - DevFlow</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="app-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <h1>
+                    DevFlow
+                </h1>
+
+                <p>
+                    Project Management
+                </p>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="index.html"
+                    class="nav-link"
+                >
+                    Dashboard
+                </a>
+
+
+                <a
+                    href="projects.html"
+                    class="nav-link active"
+                >
+                    Projects
+                </a>
+
+
+                <a
+                    href="tasks.html"
+                    class="nav-link"
+                >
+                    Tasks
+                </a>
+
+
+                <a
+                    href="clients.html"
+                    class="nav-link"
+                >
+                    Clients
+                </a>
+
+            </nav>
+
+
+            <button
+                type="button"
+                id="logout-button"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 PROJECT HEADER
+            ================================================== -->
+
+            <header class="page-header project-details-header">
+
+                <div class="project-details-heading">
+
+                    <a
+                        href="projects.html"
+                        class="project-back-link"
+                    >
+                        ← Back to Projects
+                    </a>
+
+
+                    <h2 id="project-name">
+                        Project Details
+                    </h2>
+
+
+                    <p id="project-client">
+                        Loading project...
+                    </p>
+
+                </div>
+
+
+                <div class="project-header-actions">
+
+                    <a
+                        href="index.html"
+                        class="secondary-button"
+                    >
+                        Dashboard
+                    </a>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PROJECT OVERVIEW
+            ================================================== -->
+
+            <section class="dashboard-section project-overview-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h3>
+                            Project Overview
+                        </h3>
+
+                        <p>
+                            View project information and manage its details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-overview-grid">
+
+
+                    <!-- Description -->
+
+                    <div class="project-overview-main">
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Description
+                            </span>
+
+
+                            <p id="project-description">
+                                Loading...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Project Information -->
+
+                    <div class="project-overview-side">
+
+                        <div class="project-summary-card">
+
+                            <span class="detail-label">
+                                Client
+                            </span>
+
+
+                            <strong id="project-client-details">
+                                Loading...
+                            </strong>
+
+                        </div>
+
+
+                        <div class="project-summary-card">
+
+                            <span class="detail-label">
+                                Status
+                            </span>
+
+
+                            <span
+                                id="project-status"
+                                class="project-status"
+                            >
+                                Loading...
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Project Progress -->
+
+                <div class="project-progress-section">
+
+                    <div class="project-progress-header">
+
+                        <div>
+
+                            <span class="detail-label">
+                                Task Progress
+                            </span>
+
+                            <p>
+                                Progress is calculated from completed tasks.
+                            </p>
+
+                        </div>
+
+
+                        <strong
+                            id="project-progress-value"
+                        >
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <div
+                        class="progress-bar project-progress-bar"
+                    >
+
+                        <div
+                            id="project-progress-fill"
+                            class="progress-fill"
+                            style="width: 0%"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Project Actions -->
+
+                <div class="project-actions">
+
+                    <button
+                        type="button"
+                        id="edit-project-button"
+                        class="primary-button"
+                    >
+                        Edit Project
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="delete-project-button"
+                        class="danger-button"
+                    >
+                        Delete Project
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 TASKS SECTION
+            ================================================== -->
+
+            <section
+                class="dashboard-section tasks-section"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h3>
+                            Project Tasks
+                        </h3>
+
+
+                        <p>
+                            Manage the tasks that belong to this project.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="new-task-button"
+                        class="primary-button"
+                    >
+                        + New Task
+                    </button>
+
+                </div>
+
+
+
+                <div
+                    id="tasks-container"
+                    class="tasks-list"
+                >
+
+                    <div class="empty-state">
+
+                        <h3>
+                            No tasks yet
+                        </h3>
+
+
+                        <p>
+                            Create your first task for this project.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 EDIT PROJECT MODAL
+            ================================================== -->
+
+            <div
+                id="edit-modal"
+                class="modal hidden"
+            >
+
+                <div class="modal-content">
+
+
+                    <div class="modal-header">
+
+                        <div>
+
+                            <h2>
+                                Edit Project
+                            </h2>
+
+                            <p>
+                                Update your project information.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="close-edit-modal"
+                            class="close-button"
+                            aria-label="Close edit project modal"
+                        >
+                            &times;
+                        </button>
+
+                    </div>
+
+
+
+                    <form
+                        id="edit-project-form"
+                    >
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="edit-project-name"
+                            >
+                                Project Name
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="edit-project-name"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="edit-project-description"
+                            >
+                                Description
+                            </label>
+
+
+                            <textarea
+                                id="edit-project-description"
+                            ></textarea>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="edit-project-client"
+                            >
+                                Client
+                            </label>
+
+
+                            <select
+                                id="edit-project-client"
+                            >
+
+                                <option value="">
+                                    No client
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="edit-project-status"
+                            >
+                                Status
+                            </label>
+
+
+                            <select
+                                id="edit-project-status"
+                            >
+
+                                <option value="active">
+                                    Active
+                                </option>
+
+
+                                <option value="completed">
+                                    Completed
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="form-actions modal-actions">
+
+                            <button
+                                type="button"
+                                id="cancel-edit-button"
+                                class="secondary-button"
+                            >
+                                Cancel
+                            </button>
+
+
+                            <button
+                                type="submit"
+                                class="primary-button"
+                            >
+                                Save Changes
+                            </button>
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CREATE TASK MODAL
+            ================================================== -->
+
+            <div
+                id="task-modal"
+                class="modal hidden"
+            >
+
+                <div class="modal-content">
+
+
+                    <div class="modal-header">
+
+                        <div>
+
+                            <h2>
+                                Create Task
+                            </h2>
+
+                            <p>
+                                Add a new task to this project.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="close-task-modal"
+                            class="close-button"
+                            aria-label="Close create task modal"
+                        >
+                            &times;
+                        </button>
+
+                    </div>
+
+
+
+                    <form id="task-form">
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="task-title"
+                            >
+                                Task Title
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="task-title"
+                                placeholder="e.g. Build homepage"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="task-description"
+                            >
+                                Description
+                            </label>
+
+
+                            <textarea
+                                id="task-description"
+                                placeholder="Describe the task"
+                            ></textarea>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="task-priority"
+                            >
+                                Priority
+                            </label>
+
+
+                            <select
+                                id="task-priority"
+                            >
+
+                                <option value="low">
+                                    Low
+                                </option>
+
+
+                                <option
+                                    value="medium"
+                                    selected
+                                >
+                                    Medium
+                                </option>
+
+
+                                <option value="high">
+                                    High
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="task-due-date"
+                            >
+                                Due Date
+                            </label>
+
+
+                            <input
+                                type="date"
+                                id="task-due-date"
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-actions modal-actions">
+
+                            <button
+                                type="button"
+                                id="cancel-task-button"
+                                class="secondary-button"
+                            >
+                                Cancel
+                            </button>
+
+
+                            <button
+                                type="submit"
+                                class="primary-button"
+                            >
+                                Create Task
+                            </button>
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =================================================
+         EDIT TASK MODAL
+    ================================================== -->
+
+    <div
+        id="edit-task-modal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>
+                        Edit Task
+                    </h2>
+
+                    <p>
+                        Update the task details.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="close-button"
+                    id="close-edit-task-button"
+                    aria-label="Close edit task modal"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+
+            <form
+                id="edit-task-form"
+            >
+
+
+                <div class="form-group">
+
+                    <label
+                        for="edit-task-title"
+                    >
+                        Task Title
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="edit-task-title"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label
+                        for="edit-task-description"
+                    >
+                        Description
+                    </label>
+
+
+                    <textarea
+                        id="edit-task-description"
+                    ></textarea>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label
+                        for="edit-task-priority"
+                    >
+                        Priority
+                    </label>
+
+
+                    <select
+                        id="edit-task-priority"
+                    >
+
+                        <option value="low">
+                            Low
+                        </option>
+
+
+                        <option value="medium">
+                            Medium
+                        </option>
+
+
+                        <option value="high">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label
+                        for="edit-task-status"
+                    >
+                        Status
+                    </label>
+
+
+                    <select
+                        id="edit-task-status"
+                    >
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+
+                        <option value="in-progress">
+                            In Progress
+                        </option>
+
+
+                        <option value="completed">
+                            Completed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label
+                        for="edit-task-due-date"
+                    >
+                        Due Date
+                    </label>
+
+
+                    <input
+                        type="date"
+                        id="edit-task-due-date"
+                    >
+
+                </div>
+
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="cancel-edit-task-button"
+                        class="secondary-button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Save Changes
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         CONFIRMATION MODAL
+    ================================================== -->
+
+    <div
+        id="confirm-modal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+
+            <h2 id="confirm-title">
+                Confirm Action
+            </h2>
+
+
+            <p id="confirm-message">
+                Are you sure?
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="cancel-confirm-button"
+                    class="secondary-button"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    id="confirm-action-button"
+                    class="danger-button"
+                >
+                    Delete
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         ERROR MODAL
+    ================================================== -->
+
+    <div
+        id="error-modal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+            <h2 id="error-title">
+                Something went wrong
+            </h2>
+
+
+            <p id="error-message">
+                An unexpected error occurred.
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="close-error-button"
+                    class="primary-button"
+                >
+                    OK
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script src="auth.js"></script>
+
+    <script src="project.js"></script>
+
+    <script src="tasks.js"></script>
+
+</body>
+
+</html>
