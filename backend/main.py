@@ -5,8 +5,13 @@ from backend.tasks import router as tasks_router
 from backend.clients import router as clients_router
 from backend.users import router as users_router
 from backend.auth import router as auth_router
+from backend.database import initialize_database
 
 app = FastAPI(title="DevFlow API")
+
+@app.on_event("startup")
+def startup():
+    initialize_database()
 
 
 app.add_middleware(
