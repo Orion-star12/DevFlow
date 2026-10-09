@@ -6,7 +6,7 @@ from fastapi.security import (
     HTTPBearer
 )
 
-from database import get_connection
+from backend.database import get_connection
 
 
 SECRET_KEY = (

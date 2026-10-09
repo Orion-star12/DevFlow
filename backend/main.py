@@ -1,10 +1,10 @@
 from fastapi import FastAPI
-from projects import router as projects_router
 from fastapi.middleware.cors import CORSMiddleware
-from tasks import router as tasks_router
-from clients import router as clients_router
-from users import router as users_router
-from auth import router as auth_router
+from backend.projects import router as projects_router
+from backend.tasks import router as tasks_router
+from backend.clients import router as clients_router
+from backend.users import router as users_router
+from backend.auth import router as auth_router
 
 app = FastAPI(title="DevFlow API")
 
