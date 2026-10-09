@@ -8,11 +8,11 @@ from backend.auth import router as auth_router
 
 app = FastAPI(title="DevFlow API")
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://127.0.0.1:5500",
-        "http://localhost:5000",
+        "https://devflow-frontend-abke.onrender.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],
